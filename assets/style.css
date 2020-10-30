@@ -7,17 +7,80 @@ html {
 }
 
 body {
-  align-items: center;
-  background: #343434;
-  color: #fefefe;
   display: flex;
-  font-family: Helvetica, Arial, sans-serif;
   justify-content: center;
-  line-height: 140%;
-  min-height: 100vh;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+
+  /*line-height: 140%;
+  min-height: 100vh;*/
 }
 
 main {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
+.container {
+  height: 20rem;
+  width: 40rem;
+  background-color: grey;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 0 0 .5rem .5rem;
+}
+
+#text {
+  color: white;
+  word-wrap: break-word;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+#choice-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin-left: 4rem;
+  margin-right: 4rem;
+  gap: 4rem;
+  margin-top: 1rem;
+}
+ .btn {
+   font-size: 1rem;
+   color: white;
+   background-color: blue;
+   padding: 1rem;
+   border: 1px solid black;
+   border-radius: 1rem;
+ }
+
+ .btn:hover {
+   cursor: pointer;
+   transform: rotate(4deg);
+ }
+
+#choice-text-input {
+  text-align: center;
+  display: none;
+}
+
+#choice-text-input2 {
+  text-align: center;
+  display: none;
+}
+
+#choice-text-input3 {
+  text-align: center;
+  display: none;
+}
+
+#multiple-choice {
+  color: white;
+  display: none;
+}
+
+li {
+  list-style: none;
+}
