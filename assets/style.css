@@ -2,10 +2,13 @@
   box-sizing: border-box;
 }
 
+/* font size */
 html {
   font-size: 1.2em;
 }
 
+/* displayed the body as flex, centered it, changed viewport height and width
+to 100, changed colors, and font style */
 body {
   display: flex;
   justify-content: center;
@@ -20,10 +23,13 @@ body {
   min-height: 100vh;*/
 }
 
+/* font size*/
 main {
   font-size: 1rem;
 }
 
+/* changed the height and width of the class container, the color, padding,
+radius, and added box shadow */
 .container {
   height: 20rem;
   width: 40rem;
@@ -33,12 +39,15 @@ main {
   box-shadow: 0 0 .5rem .5rem;
 }
 
+/* changed the color, margin, and word wrap of the text id */
 #text {
   color: white;
   word-wrap: break-word;
   margin: 2rem 2rem 2rem 2rem;
 }
 
+/* changed the display of the class choice-buttons to grid, margins, and added
+a gap between the buttons */
 #choice-buttons {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -47,6 +56,8 @@ main {
   gap: 4rem;
   margin-top: 1rem;
 }
+
+/* changed the font size, color, padding, and border of the btn(button) class */
  .btn {
    font-size: 1rem;
    color: white;
@@ -56,31 +67,37 @@ main {
    border-radius: 1rem;
  }
 
+/* added the pointer when hovering over the buttons, plus added a little rotation */
  .btn:hover {
    cursor: pointer;
    transform: rotate(4deg);
  }
 
+/* made the text input box centered and hidden */
 #choice-text-input {
   text-align: center;
   display: none;
 }
 
+/* made the text input box centered and hidden */
 #choice-text-input2 {
   text-align: center;
   display: none;
 }
 
+/* made the text input box centered and hidden */
 #choice-text-input3 {
   text-align: center;
   display: none;
 }
 
+/* made the multiple choice white and hidden */
 #multiple-choice {
   color: white;
   display: none;
 }
 
+/* took away list style*/
 li {
   list-style: none;
 }
