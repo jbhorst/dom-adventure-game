@@ -6,21 +6,21 @@
 
 
 // Assign variables //
-let game = document.getElementById("game");
-let textEl = document.getElementById("text");
-let btnContainer = document.getElementById("choice-buttons");
-let btnEl = document.getElementsByClassName("btn");
-let multipleChoice = document.getElementById("multiple-choice");
-let listItem1 = document.getElementById("list-item1");
-let listItem2 = document.getElementById("list-item2");
-let listItem3 = document.getElementById("list-item3");
-let listItem4 = document.getElementById("list-item4");
-let textInput = document.getElementById("choice-text-input");
-let textInput2 = document.getElementById("choice-text-input2");
-let textInput3 = document.getElementById("choice-text-input3");
-let answer = document.getElementById("answer");
-let answer2 = document.getElementById("answer2");
-let answer3 = document.getElementById("answer3");
+const game = document.getElementById("game");
+const textEl = document.getElementById("text");
+const btnContainer = document.getElementById("choice-buttons");
+const btnEl = document.getElementsByClassName("btn");
+const multipleChoice = document.getElementById("multiple-choice");
+const listItem1 = document.getElementById("list-item1");
+const listItem2 = document.getElementById("list-item2");
+const listItem3 = document.getElementById("list-item3");
+const listItem4 = document.getElementById("list-item4");
+const textInput = document.getElementById("choice-text-input");
+const textInput2 = document.getElementById("choice-text-input2");
+const textInput3 = document.getElementById("choice-text-input3");
+const answer = document.getElementById("answer");
+const answer2 = document.getElementById("answer2");
+const answer3 = document.getElementById("answer3");
 
 // Create function called start that includes click event listeners //
 // When you click the html button it either goes to the math functions or riddle function //
