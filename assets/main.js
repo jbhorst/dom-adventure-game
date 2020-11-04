@@ -4,7 +4,7 @@
 
 document.querySelector('#game').textContent = 'DOM Adventure Game';
 
-var input = document.getElementById("startInput");
+const input = document.getElementById("startInput");
 input.addEventListener("keyup", function(start) {
     if (event.keyCode === 13)
         event.preventDefault();
