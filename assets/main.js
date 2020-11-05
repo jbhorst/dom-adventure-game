@@ -25,17 +25,19 @@ let answer3 = document.getElementById("answer3");
 // Create function called start that includes click event listeners //
 // When you click the html button it either goes to the math functions or riddle function //
 function start() {
-  btnEl[0].addEventListener("click", () => {
-    return math1();
-  });
+  const mathCaller = function() {
+    math1();
+  }
+  btnEl[0].addEventListener("click", mathCaller);
   btnEl[1].addEventListener("click", () => {
-    return riddle1();
+    btnEl[0].removeEventListener("click", mathCaller);
+    riddle1();
   });
 };
 
 // Create a function called math1 to ask the first math question //
 // Used a keydown event listener so the user can press a key for the answer //
-// Create branch that returns the math1BridgeChoice function if the answer is correct and the death function if wrong //
+// Create branch that s the math1BridgeChoice function if the answer is correct and the death function if wrong //
 // Used the textContent to change the text //
 const math1 = function() {
   textEl.textContent = "You walk over the bridge to another rock. The bridge behind you disappears. Again, you see the troll in between two bridges. You may only choose which to cross once you have answered the troll's question. The troll looks at you and asks, what is 2 times 2? (Press key a, b, c, or d to answer)";
@@ -43,9 +45,9 @@ const math1 = function() {
   multipleChoice.style.display = "block";
   window.addEventListener("keydown", event => {
     if (event.key == "b") {
-      return math1BridgeChoice();
+      math1BridgeChoice();
     } else if (event.key != "b") {
-      return death();
+      death();
     }
   });
 };
@@ -59,10 +61,10 @@ const math1BridgeChoice = function() {
   btnContainer.style.display = "block";
   multipleChoice.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return death2();
+    death2();
   });
   btnEl[1].addEventListener("click", () => {
-    return math2();
+    math2();
   });
 };
 
@@ -81,9 +83,9 @@ const math2 = function() {
   listItem4.textContent = "d. 12";
   window.addEventListener("keydown", event => {
     if (event.key == "c") {
-      return math2BridgeChoice();
+      math2BridgeChoice();
     } else if (event.key != "c") {
-      return death();
+      death();
     }
   });
 };
@@ -97,10 +99,10 @@ const math2BridgeChoice = function() {
   btnContainer.style.display = "block";
   multipleChoice.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return math3();
+    math3();
   });
   btnEl[1].addEventListener("click", () => {
-    return death2();
+    death2();
   });
 };
 
@@ -118,9 +120,9 @@ const math3 = function() {
   listItem4.textContent = "d. 512";
   window.addEventListener("keydown", event => {
     if (event.key == "a") {
-      return math3BridgeChoice();
+      math3BridgeChoice();
     } else if (event.key != "a") {
-      return death();
+      death();
     }
   });
 };
@@ -134,10 +136,10 @@ const math3BridgeChoice = function() {
   btnContainer.style.display = "block";
   multipleChoice.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return death2();
+    death2();
   });
   btnEl[1].addEventListener("click", () => {
-    return winner();
+    winner();
   });
 };
 
@@ -151,9 +153,9 @@ const riddle1 = function() {
   textInput.style.display = "block";
   answer.addEventListener("change", () => {
     if (answer.value == "sponge") {
-      return riddle1BridgeChoice();
+      riddle1BridgeChoice();
     } else if (answer.value != "sponge") {
-      return death();
+      death();
     }
   });
 };
@@ -168,10 +170,10 @@ const riddle1BridgeChoice = function() {
   multipleChoice.style.display = "none";
   textInput.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return riddle2();
+    riddle2();
   });
   btnEl[1].addEventListener("click", () => {
-    return death2();
+    death2();
   });
 };
 
@@ -187,9 +189,9 @@ const riddle2 = function() {
   multipleChoice.style.display = "none";
   answer2.addEventListener("change", () => {
     if (answer2.value == "candle") {
-      return riddle2BridgeChoice();
+      riddle2BridgeChoice();
     } else if (answer2.value != "candle") {
-      return death();
+      death();
     }
   });
 };
@@ -202,12 +204,12 @@ const riddle2BridgeChoice = function() {
   textEl.textContent = "You will not get past my final riddle! Now which path will you take?";
   btnContainer.style.display = "block";
   multipleChoice.style.display = "none";
-  textInput.style.display = "none";
+  textInput2.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return death2();
+    death2();
   });
   btnEl[1].addEventListener("click", () => {
-    return riddle3();
+    riddle3();
   });
 };
 
@@ -222,9 +224,9 @@ const riddle3 = function() {
   multipleChoice.style.display = "none";
   answer3.addEventListener("change", () => {
     if (answer3.value == "water") {
-      return riddle3BridgeChoice();
+      riddle3BridgeChoice();
     } else if (answer3.value != "water") {
-      return death();
+      death();
     }
   });
 };
@@ -237,18 +239,18 @@ const riddle3BridgeChoice = function() {
   textEl.textContent = "Very clever, you are. Now which path will you take? Choose the correct path and you may leave my realm.";
   btnContainer.style.display = "block";
   multipleChoice.style.display = "none";
-  textInput.style.display = "none";
+  textInput3.style.display = "none";
   btnEl[0].addEventListener("click", () => {
-    return winner();
+    winner();
   });
   btnEl[1].addEventListener("click", () => {
-    return death2();
+    death2();
   });
 };
 
 // Create a function called death that ends the game if the user chooses a wrong answer //
 // Used the textContent to change the text //
-const death = function() {
+const death = function(cause) {
   textEl.textContent = "The troll runs toward you, picks you up by the neck and tosses you off the rock. You have died.";
   btnContainer.style.display = "none";
   multipleChoice.style.display = "none";
